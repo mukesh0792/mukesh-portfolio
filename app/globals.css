@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MODERN DARK PORTFOLIO SYSTEM
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-dim: #666666;
+  --border: #222222;
+  --accent: #a67c1e;
+  --accent-hover: #d4a037;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-dark);
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Smooth scroll container */
+.smooth-scroll {
+  will-change: transform;
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease;
+}
+
+.custom-cursor.hover {
+  transform: scale(1.5);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+/* Link styles */
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Badge/tag styles */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Section numbering */
+.section-number {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Marquee container */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Stacking cards effect */
+.stacking-cards {
+  position: relative;
+}
+
+.stacking-card {
+  position: sticky;
+  top: 100px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* Utility classes */
+.uppercase-spaced {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
